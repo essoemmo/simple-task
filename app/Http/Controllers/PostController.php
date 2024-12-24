@@ -32,6 +32,11 @@ class PostController extends Controller
         return self::successResponse('updated', PostResource::make($post));
     }
 
+    public function show(Post $post): JsonResponse
+    {
+        return self::successResponse('show', PostResource::make($post));
+    }
+
     public function destroy(Post $post): JsonResponse
     {
         $post->delete();
